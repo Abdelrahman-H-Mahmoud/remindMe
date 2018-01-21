@@ -9,6 +9,7 @@ const bodyParser=require("body-parser");
 const flash=require('connect-flash');
 const session=require('express-session');
 var appConfig=require('./config/appConfig');
+var favicon = require('serve-favicon');
 mongoose.Promise=global.Promise;
 //connect to mongoose
 
@@ -38,7 +39,7 @@ app.use(bodyParser.json());
 //static folder
 app.use(express.static(path.join(__dirname,'public')));
 app.use(methodOverride('_method'));
-
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
 app.use(session({
     secret: 'secret',
     resave: true,
