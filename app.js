@@ -8,9 +8,10 @@ const passport=require('passport');
 const bodyParser=require("body-parser");
 const flash=require('connect-flash');
 const session=require('express-session');
-mongoose.Promis=global.Promise;
+var appConfig=require('./config/appConfig');
+mongoose.Promise=global.Promise;
 //connect to mongoose
-mongoose.connect('mongodb://localhost/remindme-dev',{
+mongoose.connect(appConfig.DbUrl,{
     useMongoClient:true
 }).then(()=>{
     console.log("mongoDb Connected...");
@@ -70,7 +71,6 @@ app.get('/about',(req,res)=>{
 app.use('/notes',notes);
 app.use('/users',users);
 
-const port =  3000;
-app.listen(port,()=>{
-    console.log(`The server is running on ${port}`);
+app.listen(appConfig.port,()=>{
+    console.log(`The server is running on ${appConfig.port}`);
 });
