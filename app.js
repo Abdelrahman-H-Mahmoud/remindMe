@@ -21,9 +21,6 @@ mongoose.connect(require('./config/dbConfig'),{
     console.log(err);
 });
 
-app.get('/favicon.ico',(req,res)=>{
-    res.sendFile(__dirname + '/public/images/favicon.ico');
-});
 
 //Load Routers
 const notes=require("./routes/notes");
