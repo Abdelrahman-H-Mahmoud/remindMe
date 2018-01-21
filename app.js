@@ -11,6 +11,7 @@ const session=require('express-session');
 var appConfig=require('./config/appConfig');
 mongoose.Promise=global.Promise;
 //connect to mongoose
+/*
 mongoose.connect(require('./config/dbConfig'),{
     useMongoClient:true
 }).then(()=>{
@@ -18,7 +19,7 @@ mongoose.connect(require('./config/dbConfig'),{
 }).catch((err)=>{
     console.log(err);
 });
-
+*/
 
 //Load Routers
 const notes=require("./routes/notes");
