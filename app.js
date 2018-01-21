@@ -11,7 +11,7 @@ const session=require('express-session');
 var appConfig=require('./config/appConfig');
 mongoose.Promise=global.Promise;
 //connect to mongoose
-mongoose.connect(appConfig.DbUrl,{
+mongoose.connect(require('./config/dbConfig'),{
     useMongoClient:true
 }).then(()=>{
     console.log("mongoDb Connected...");
