@@ -20,7 +20,7 @@ mongoose.connect(require('./config/dbConfig'),{
 }).catch((err)=>{
     console.log(err);
 });
-
+require('./models/idea');
 
 //Load Routers
 const notes=require("./routes/notes");
