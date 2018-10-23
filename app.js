@@ -68,6 +68,15 @@ app.get('/about',(req,res)=>{
     res.render('about');
 });
 
+app.post('/api/dexi',(req,res)=>{
+    console.log(req.body);
+    res.sendStatus(200);
+});
+
+app.get('/api/dexi',(req,res)=>{
+    console.log('working');
+    res.sendStatus(200);
+});
 
 //Use Routes
 app.use('/notes',notes);
